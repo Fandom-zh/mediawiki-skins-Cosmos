@@ -5,6 +5,7 @@ namespace MediaWiki\Skin\Cosmos;
 use Config;
 use ConfigFactory;
 use ExtensionRegistry;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\User\UserOptionsLookup;
@@ -19,6 +20,9 @@ class SkinCosmos extends SkinTemplate {
 
 	/** @var CosmosConfig */
 	public $cosmosConfig;
+
+	/** @var LanguageNameUtils */
+	public $languageNameUtils;
 
 	/** @var PermissionManager */
 	public $permissionManager;
@@ -39,6 +43,7 @@ class SkinCosmos extends SkinTemplate {
 	 * @param ConfigFactory $configFactory
 	 * @param CosmosConfig $cosmosConfig
 	 * @param CosmosWordmarkLookup $cosmosWordmarkLookup
+	 * @param LanguageNameUtils $languageNameUtils
 	 * @param PermissionManager $permissionManager
 	 * @param SpecialPageFactory $specialPageFactory
 	 * @param TitleFactory $titleFactory
@@ -49,6 +54,7 @@ class SkinCosmos extends SkinTemplate {
 		ConfigFactory $configFactory,
 		CosmosConfig $cosmosConfig,
 		CosmosWordmarkLookup $cosmosWordmarkLookup,
+		LanguageNameUtils $languageNameUtils,
 		PermissionManager $permissionManager,
 		SpecialPageFactory $specialPageFactory,
 		TitleFactory $titleFactory,
@@ -59,6 +65,7 @@ class SkinCosmos extends SkinTemplate {
 
 		$this->config = $configFactory->makeConfig( 'Cosmos' );
 		$this->cosmosConfig = $cosmosConfig;
+		$this->languageNameUtils = $languageNameUtils;
 		$this->permissionManager = $permissionManager;
 		$this->specialPageFactory = $specialPageFactory;
 		$this->titleFactory = $titleFactory;
