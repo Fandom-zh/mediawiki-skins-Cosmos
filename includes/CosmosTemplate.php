@@ -1076,7 +1076,7 @@ class CosmosTemplate extends BaseTemplate {
 
 				// Special casing for Language to change label to current page content language (not view language).
 				$interlangLabel = $this->getMsg( 'otherlanguages' )->text();
-				$this->title = $skin->getContext()->getMain()->getTitle();
+				$this->title = $skin->getTitle();
 				$pageLanguage = $this->title->getPageLanguage()->getCode();
 
 				// Use $wgLanguageCode in special pages
